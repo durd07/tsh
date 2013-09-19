@@ -1,14 +1,19 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+
 #include <unistd.h>
 #include <getopt.h>
 #include <errno.h>
 #include <sys/types.h>
 #include <sys/wait.h>
 
+#include <readline/readline.h>
+#include <readline/history.h>
+
+
 #define VERSION                                 \
-    "tsh version 1.1.0\n"
+    "tsh version 1.2.0\n"
 
 #define USAGE                                           \
     "Usage: tsh [GNU long option] [option]... \n \
@@ -28,7 +33,7 @@ static struct option longoptions [] = {
 
 static char user[MAX_USER_LENGTH] = {0};
 static char current_work_path[MAX_PATH_LENGTH] = {0};
-static char command[MAX_COMMAND_LENGTH] = {0};
+static char PS1[MAX_USER_LENGTH + MAX_PATH_LENGTH] = {0};
 
 static void usage(void);
 static void version(void);
@@ -38,8 +43,8 @@ static void cd(char *argv[]);
 
 int main(int argc, char *argv[]) {
     char *delimiter_position = NULL;
+    char *command = NULL;
     int i = 0;
-    
     if (argc < 2) {
         while(1) {
             if (getcwd(current_work_path, sizeof(current_work_path)) == NULL) {
@@ -49,29 +54,36 @@ int main(int argc, char *argv[]) {
                 break;
             }
 
-            fprintf(stdout, "%s:%s$ ", user, current_work_path);
+            sprintf(PS1, "%s:%s$ ", user, current_work_path);
 
-            if (fgets(command, sizeof(command), stdin)) {
-                command[strlen(command) - 1] = '\0';
-                delimiter_position = strtok(command, " ");
-                while (delimiter_position != NULL) {
-                    argv[i++] = delimiter_position;
-                    delimiter_position = strtok(NULL, " ");
-                }
-                argv[i] = NULL;
-                i = 0;
-                if (strcmp(argv[0], "quit") == 0) {
-                    break;
-                }
-                
-                if (strcmp(argv[0], "cd") == 0) {
-                    cd(argv);
-                    continue;
-                }
-                execute(argv);
-            } else {
+            if (command != NULL) {
+                free(command);
+                command = NULL;
+            }
+            
+            command = readline(PS1);
+            if ((command != NULL) && (*command != '\0')) {
+                add_history(command);
+            }
+            
+            delimiter_position = strtok(command, " ");
+            while (delimiter_position != NULL) {
+                argv[i++] = delimiter_position;
+                delimiter_position = strtok(NULL, " ");
+            }
+            argv[i] = NULL;
+            i = 0;
+            
+            if (strcmp(argv[0], "quit") == 0) {
                 break;
             }
+            
+            if (strcmp(argv[0], "cd") == 0) {
+                cd(argv);
+                continue;
+            }
+
+            execute(argv);
         }
     } else {
         readopt(argc, argv);
