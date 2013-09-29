@@ -13,8 +13,9 @@ AC_PROG_CC
 AC_PROG_INSTALL
 
 # Checks for libraries.
-have_readline = no
-AC_SEARCH_LIBS([readline add_history], [readline], [have_readline=yes])
+have_readline=no
+AC_SEARCH_LIBS([readline], [readline], [have_readline=yes])
+AC_SEARCH_LIBS([add_history], [readline], [have_readline=yes])
 
 if test "x${have_readline} = xyes"; then
    AC_CHECK_HEADERS([readline/readline.h readline/history.h], [], [have_readline=no])
