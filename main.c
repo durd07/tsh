@@ -143,12 +143,12 @@ int exec_shell(int argc, char* argv[])
 			}
 
 			//			if(read_from_stdin == 0) {
-			//		command = readline(PS1);
+					command = readline(PS1);
 
 			//			}else {
-			command = (char*)malloc(10000);
-			memset(command, 0, 10000);
-			read( child , command, 10000 );
+			//command = (char*)malloc(10000);
+			//memset(command, 0, 10000);
+			//read( child , command, 10000 );
 			//			}
 
 			if ((command != NULL) && (*command != '\0')) {
