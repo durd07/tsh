@@ -1,3 +1,12 @@
+=====================================================
+commit f79ed9b3459c17f584b0e41bcf1c783f14be6bb9
+Author: durd <durd@bogon.localdomain>
+Date:   Tue Nov 5 17:32:49 2013 +0800
+
+    change tsh for the command line window
+    
+    change start from fork to thread
+
 diff --git a/main.c b/main.c
 index 67dcb7c..df4c4b4 100644
 --- a/main.c

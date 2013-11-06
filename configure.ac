@@ -16,6 +16,9 @@ AC_PROG_INSTALL
 have_readline=no
 AC_SEARCH_LIBS([readline], [readline], [have_readline=yes])
 AC_SEARCH_LIBS([add_history], [readline], [have_readline=yes])
+AC_SEARCH_LIBS([pthread_create], [pthread], [have_pthread=yes])
+AC_SEARCH_LIBS([dlopen], [dl], [have_dl=yes])
+AC_SEARCH_LIBS([dlsym], [dl], [have_dl=yes])
 
 if test "x${have_readline} = xyes"; then
    AC_CHECK_HEADERS([readline/readline.h readline/history.h], [], [have_readline=no])
@@ -33,7 +36,8 @@ fi
 # Checks for header files.
 AC_CHECK_HEADERS([stdio.h stdlib.h string.h \
                   unistd.h getopt.h errno.h \
-                  sys/types.h sys/wait.h])
+                  sys/types.h sys/wait.h \
+				  pthread.h ])
 
 # Checks for typedefs, structures, and compiler characteristics.
 AC_TYPE_PID_T

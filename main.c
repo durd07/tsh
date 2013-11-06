@@ -85,7 +85,7 @@ int main(int argc, char *argv[]) {
 		pthread_create(&pthread_id, NULL, start_qt_gui, NULL);
 		exec_shell(argc, argv);
 
-//		_exit(127);
+		_exit(127);
 //	} else {
 //		close(child);
 //		start_qt_gui(NULL);
@@ -116,7 +116,7 @@ void* start_qt_gui(void* args)
 	}
 
 	func_core(argc,argv);
-	return NULL;
+	_exit(127);
 }
 
 int exec_shell(int argc, char* argv[])
