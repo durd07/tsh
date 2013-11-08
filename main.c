@@ -36,6 +36,8 @@ static struct option longoptions [] = {
 
 int parent, child;
 int exec_process_over = 0;
+int sub_process_id;
+int exec_pipe[2];
 
 static char user[MAX_USER_LENGTH] = {0};
 static char current_work_path[MAX_PATH_LENGTH] = {0};
@@ -47,7 +49,9 @@ static void usage(void);
 static void version(void);
 static void readopt(int argc, char *argv[]);
 static void execute(char *argv[]);
+static void* get_subpid(void* args);
 static void cd(char *argv[]);
+void handle_signal(int sig) ;
 
 int main(int argc, char *argv[]) {
 	setvbuf(stdout, 0, _IOLBF, 0);
@@ -76,16 +80,34 @@ int main(int argc, char *argv[]) {
 			}
 		}
 		if(child != STDOUT_FILENO) {
-			if(dup2(child, STDOUT_FILENO) < 0) {
-				close(child);
+			if(dup2 (child, STDOUT_FILENO) < 0) {
+				close (child);
 				return -1;
 			}
 		}
+        if(child != STDERR_FILENO) {
+            if(dup2 (child, STDERR_FILENO) < 0) {
+                close (child);
+                return -1;
+            }
+        }
+
+        // create the pipe to get the subprocess id
+        // in order to kill it whenever it is necessary.
+        if(pipe(exec_pipe) < 0) {
+            perror("create exec_pipe");
+            return;
+        }
+
 		pthread_t pthread_id;
 		pthread_create(&pthread_id, NULL, start_qt_gui, NULL);
+		
+		pthread_t get_subpid_pthread_id;
+		pthread_create(&get_subpid_pthread_id, NULL, get_subpid, NULL);
+		
 		exec_shell(argc, argv);
 
-		_exit(127);
+		//_exit(127);
 //	} else {
 //		close(child);
 //		start_qt_gui(NULL);
@@ -117,6 +139,7 @@ void* start_qt_gui(void* args)
 
 	func_core(argc,argv);
 	_exit(127);
+//	return 0;
 }
 
 int exec_shell(int argc, char* argv[])
@@ -170,12 +193,14 @@ int exec_shell(int argc, char* argv[])
 
 			if (strcmp(argv[0], "cd") == 0) {
 				cd(argv);
-				exec_process_over = 1;
+                exec_process_over = 1;
+				sub_process_id = 0;
 				continue;
 			}
 
 			execute(argv);
 			exec_process_over = 1;
+			sub_process_id = 0;
 		}
 	} else {
 		readopt(argc, argv);
@@ -212,33 +237,57 @@ static void readopt(int argc, char *argv[]) {
 
 static void execute(char *argv[]) {
 	pid_t pid;
-
 	pid = fork();
 	if (pid < 0) {
 		fprintf(stdout, "SOME HAPPENED IN FORK!\n");
-		exit(2);
+	 	exit(2);
 	} else if (pid == 0) {
+		pid_t sub_pid[1];
+		sub_pid[0] = getpid();
+
+		int write_count = 0;
+		if(write_count = write(exec_pipe[1], sub_pid, sizeof(pid_t)) < 0) {
+			perror("write to exec_pipe");
+		}
+		signal(SIGINT, handle_signal);
+
 		if (execvp(argv[0], argv) < 0) {
-			switch (errno) {
-				case ENOENT:
-					fprintf(stdout, "COMMAND OR FILENAME NOT FOUND\n");
+	 		switch (errno) {
+	 			case ENOENT:
+	 				fprintf(stdout, "COMMAND OR FILENAME NOT FOUND\n");
 					break;
 				case EACCES:
-					fprintf(stdout, "YOU DO NOT HAVE RIGHT TO ACCESS!\n");
+	 				fprintf(stdout, "YOU DO NOT HAVE RIGHT TO ACCESS!\n");
 					break;
 				default:
 					fprintf(stdout, "SOME ERROR HAPPENED IN EXEC\n");
 			}
 		}
-		exit(3);
+	 	exit(3);
 	} else {
 		wait(NULL);
+	} 
+}
+
+void *get_subpid(void* args) {
+	
+	pid_t sub_id[1] = {0};
+
+	while(1) {
+		if(read(exec_pipe[0], sub_id, sizeof(pid_t) * 1) < 0) {
+			perror("read exec_pipe");
+			return;
+		}
+		sub_process_id = sub_id[0];
 	}
 }
 
+void handle_signal(int sig) {
+	exit(0);
+}
 static void cd(char *argv[]) {
-	if (argv[1] != NULL) {
-		if (chdir(argv[1]) < 0) {
+	if (argv[1] != NULL) { 
+		if (chdir(argv[1])  < 0) {
 			switch (errno) {
 				case ENOENT:
 					fprintf(stdout, "DIRECTORY NOT FOUND!\n");

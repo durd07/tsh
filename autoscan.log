@@ -1,0 +1,10 @@
+autoscan: warning: missing AC_CHECK_FUNCS([dup2]) wanted by: 
+	main.c:81
+autoscan: warning: missing AC_CHECK_FUNCS([memset]) wanted by: 
+	main.c:157
+autoscan: warning: missing AC_CHECK_HEADERS([fcntl.h]) wanted by: 
+	main.c:11
+autoscan: warning: missing AC_CHECK_HEADERS([sys/socket.h]) wanted by: 
+	main.c:10
+autoscan: warning: missing AC_FUNC_MALLOC wanted by: 
+	main.c:156

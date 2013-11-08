@@ -1,3 +1,590 @@
+diff --git a/autom4te.cache/requests b/autom4te.cache/requests
+index 5e02428..5560253 100644
+--- a/autom4te.cache/requests
++++ b/autom4te.cache/requests
+@@ -14,67 +14,67 @@
+                         'configure.ac'
+                       ],
+                       {
+-                        'AM_PROG_F77_C_O' => 1,
+                         '_LT_AC_TAGCONFIG' => 1,
+-                        'm4_pattern_forbid' => 1,
++                        'AM_PROG_F77_C_O' => 1,
+                         'AC_INIT' => 1,
+-                        'AC_CANONICAL_TARGET' => 1,
++                        'm4_pattern_forbid' => 1,
+                         '_AM_COND_IF' => 1,
+-                        'AC_CONFIG_LIBOBJ_DIR' => 1,
++                        'AC_CANONICAL_TARGET' => 1,
+                         'AC_SUBST' => 1,
+-                        'AC_CANONICAL_HOST' => 1,
++                        'AC_CONFIG_LIBOBJ_DIR' => 1,
+                         'AC_FC_SRCEXT' => 1,
++                        'AC_CANONICAL_HOST' => 1,
+                         'AC_PROG_LIBTOOL' => 1,
+                         'AM_INIT_AUTOMAKE' => 1,
+-                        'AC_CONFIG_SUBDIRS' => 1,
+                         'AM_PATH_GUILE' => 1,
++                        'AC_CONFIG_SUBDIRS' => 1,
+                         'AM_AUTOMAKE_VERSION' => 1,
+                         'AC_CHECK_HEADERS' => 1,
+                         'LT_CONFIG_LTDL_DIR' => 1,
+-                        'AC_CONFIG_LINKS' => 1,
+                         'AC_REQUIRE_AUX_FILE' => 1,
+-                        'LT_SUPPORTED_TAG' => 1,
++                        'AC_CONFIG_LINKS' => 1,
+                         'm4_sinclude' => 1,
++                        'LT_SUPPORTED_TAG' => 1,
+                         'AM_MAINTAINER_MODE' => 1,
+                         'AM_NLS' => 1,
+                         'AC_FC_PP_DEFINE' => 1,
+                         'AM_GNU_GETTEXT_INTL_SUBDIR' => 1,
+-                        '_m4_warn' => 1,
+                         'AM_MAKEFILE_INCLUDE' => 1,
++                        '_m4_warn' => 1,
+                         'AC_PREREQ' => 1,
+                         'AM_PROG_CXX_C_O' => 1,
+-                        '_AM_MAKEFILE_INCLUDE' => 1,
+                         '_AM_COND_ENDIF' => 1,
+-                        'AC_TYPE_PID_T' => 1,
++                        '_AM_MAKEFILE_INCLUDE' => 1,
+                         'AM_ENABLE_MULTILIB' => 1,
+-                        'AM_SILENT_RULES' => 1,
++                        'AC_TYPE_PID_T' => 1,
+                         'AM_PROG_MOC' => 1,
++                        'AM_SILENT_RULES' => 1,
+                         'AC_CONFIG_FILES' => 1,
+-                        'LT_INIT' => 1,
+                         'include' => 1,
+-                        'AM_GNU_GETTEXT' => 1,
++                        'LT_INIT' => 1,
+                         'AM_PROG_AR' => 1,
++                        'AM_GNU_GETTEXT' => 1,
+                         'AC_LIBSOURCE' => 1,
+-                        'AC_CANONICAL_BUILD' => 1,
+                         'AM_PROG_FC_C_O' => 1,
++                        'AC_CANONICAL_BUILD' => 1,
+                         'AC_FC_FREEFORM' => 1,
+-                        'AC_FC_PP_SRCEXT' => 1,
+                         'AH_OUTPUT' => 1,
+-                        'AC_CONFIG_AUX_DIR' => 1,
++                        'AC_FC_PP_SRCEXT' => 1,
+                         '_AM_SUBST_NOTMAKE' => 1,
+-                        'm4_pattern_allow' => 1,
+-                        'AM_PROG_CC_C_O' => 1,
++                        'AC_CONFIG_AUX_DIR' => 1,
+                         'sinclude' => 1,
+-                        'AM_CONDITIONAL' => 1,
+-                        'AC_CANONICAL_SYSTEM' => 1,
++                        'AM_PROG_CC_C_O' => 1,
++                        'm4_pattern_allow' => 1,
+                         'AM_XGETTEXT_OPTION' => 1,
++                        'AC_CANONICAL_SYSTEM' => 1,
++                        'AM_CONDITIONAL' => 1,
+                         'AC_CONFIG_HEADERS' => 1,
+                         'AC_DEFINE_TRACE_LITERAL' => 1,
+                         'AM_POT_TOOLS' => 1,
+                         'm4_include' => 1,
+                         'AC_PROG_CC' => 1,
+-                        'AC_FUNC_FORK' => 1,
+                         '_AM_COND_ELSE' => 1,
++                        'AC_FUNC_FORK' => 1,
+                         'AC_CHECK_FUNCS' => 1,
+                         'AC_SUBST_TRACE' => 1
+                       }
+@@ -140,8 +140,8 @@
+                         'AM_SET_LEADING_DOT' => 1,
+                         'AM_SET_DEPDIR' => 1,
+                         '_AM_DEPENDENCIES' => 1,
+-                        'm4_include' => 1,
+                         'AM_PROG_INSTALL_SH' => 1,
++                        'm4_include' => 1,
+                         '_AC_AM_CONFIG_HEADER_HOOK' => 1,
+                         'AU_DEFUN' => 1,
+                         'AM_MAKE_INCLUDE' => 1
+@@ -159,63 +159,70 @@
+                         'configure.ac'
+                       ],
+                       {
+-                        'AM_PROG_F77_C_O' => 1,
+                         '_LT_AC_TAGCONFIG' => 1,
++                        'AM_PROG_F77_C_O' => 1,
+                         'm4_pattern_forbid' => 1,
+-                        'AC_INIT' => 1,
+                         'AC_CANONICAL_TARGET' => 1,
+-                        '_AM_COND_IF' => 1,
+                         'AC_CONFIG_LIBOBJ_DIR' => 1,
++                        'AC_PROG_LIBTOOL' => 1,
++                        'AM_AUTOMAKE_VERSION' => 1,
++                        'AC_CHECK_HEADERS' => 1,
++                        'LT_CONFIG_LTDL_DIR' => 1,
++                        'm4_sinclude' => 1,
++                        'AM_NLS' => 1,
++                        '_m4_warn' => 1,
++                        'AC_PREREQ' => 1,
++                        'AM_PROG_CXX_C_O' => 1,
++                        '_AM_MAKEFILE_INCLUDE' => 1,
++                        'AM_PROG_MOC' => 1,
++                        'LT_INIT' => 1,
++                        'AC_LIBSOURCE' => 1,
++                        'AM_PROG_FC_C_O' => 1,
++                        'AC_CANONICAL_BUILD' => 1,
++                        '_AM_SUBST_NOTMAKE' => 1,
++                        'AC_CONFIG_AUX_DIR' => 1,
++                        'sinclude' => 1,
++                        'm4_pattern_allow' => 1,
++                        'AC_DEFINE_TRACE_LITERAL' => 1,
++                        'AC_PROG_CC' => 1,
++                        'AC_FUNC_FORK' => 1,
++                        '_AM_COND_ELSE' => 1,
++                        'AC_SUBST_TRACE' => 1,
++                        'AC_INIT' => 1,
++                        '_AM_COND_IF' => 1,
+                         'AC_SUBST' => 1,
+                         'AC_CANONICAL_HOST' => 1,
+                         'AC_FC_SRCEXT' => 1,
+-                        'AC_PROG_LIBTOOL' => 1,
+                         'AM_INIT_AUTOMAKE' => 1,
+                         'AC_CONFIG_SUBDIRS' => 1,
+                         'AM_PATH_GUILE' => 1,
+-                        'AM_AUTOMAKE_VERSION' => 1,
+-                        'LT_CONFIG_LTDL_DIR' => 1,
+                         'AC_CONFIG_LINKS' => 1,
+                         'AC_REQUIRE_AUX_FILE' => 1,
+                         'LT_SUPPORTED_TAG' => 1,
+-                        'm4_sinclude' => 1,
+                         'AM_MAINTAINER_MODE' => 1,
+-                        'AM_NLS' => 1,
+                         'AC_FC_PP_DEFINE' => 1,
+                         'AM_GNU_GETTEXT_INTL_SUBDIR' => 1,
+-                        '_m4_warn' => 1,
+                         'AM_MAKEFILE_INCLUDE' => 1,
+-                        'AM_PROG_CXX_C_O' => 1,
+-                        '_AM_MAKEFILE_INCLUDE' => 1,
+                         '_AM_COND_ENDIF' => 1,
+                         'AM_ENABLE_MULTILIB' => 1,
++                        'AC_TYPE_PID_T' => 1,
+                         'AM_SILENT_RULES' => 1,
+-                        'AM_PROG_MOC' => 1,
+                         'AC_CONFIG_FILES' => 1,
+-                        'LT_INIT' => 1,
+                         'include' => 1,
+                         'AM_GNU_GETTEXT' => 1,
+                         'AM_PROG_AR' => 1,
+-                        'AC_LIBSOURCE' => 1,
+-                        'AC_CANONICAL_BUILD' => 1,
+-                        'AM_PROG_FC_C_O' => 1,
++                        'AC_FUNC_MALLOC' => 1,
+                         'AC_FC_FREEFORM' => 1,
+                         'AC_FC_PP_SRCEXT' => 1,
+                         'AH_OUTPUT' => 1,
+-                        'AC_CONFIG_AUX_DIR' => 1,
+-                        '_AM_SUBST_NOTMAKE' => 1,
+-                        'm4_pattern_allow' => 1,
+                         'AM_PROG_CC_C_O' => 1,
+-                        'sinclude' => 1,
+                         'AM_CONDITIONAL' => 1,
+                         'AC_CANONICAL_SYSTEM' => 1,
+                         'AM_XGETTEXT_OPTION' => 1,
+                         'AC_CONFIG_HEADERS' => 1,
+-                        'AC_DEFINE_TRACE_LITERAL' => 1,
+                         'AM_POT_TOOLS' => 1,
+                         'm4_include' => 1,
+-                        '_AM_COND_ELSE' => 1,
+-                        'AC_SUBST_TRACE' => 1
++                        'AC_CHECK_FUNCS' => 1
+                       }
+                     ], 'Autom4te::Request' )
+            );
+diff --git a/autom4te.cache/traces.2 b/autom4te.cache/traces.2
+index 6cb6d88..6e95c60 100644
+--- a/autom4te.cache/traces.2
++++ b/autom4te.cache/traces.2
+@@ -1,3 +1,4 @@
++m4trace:configure.ac:4: -1- AC_PREREQ([2.69])
+ m4trace:configure.ac:5: -1- AC_INIT([tsh], [1.2], [Tyrion-Lannister-274AL@gmail.com])
+ m4trace:configure.ac:5: -1- m4_pattern_forbid([^_?A[CHUM]_])
+ m4trace:configure.ac:5: -1- m4_pattern_forbid([_AC_])
+@@ -147,6 +148,7 @@ m4trace:configure.ac:5: -1- AC_SUBST([target_alias])
+ m4trace:configure.ac:5: -1- AC_SUBST_TRACE([target_alias])
+ m4trace:configure.ac:5: -1- m4_pattern_allow([^target_alias$])
+ m4trace:configure.ac:6: -1- AM_INIT_AUTOMAKE
++m4trace:configure.ac:6: -1- AC_PREREQ([2.62])
+ m4trace:configure.ac:6: -1- m4_pattern_allow([^AM_[A-Z]+FLAGS$])
+ m4trace:configure.ac:6: -1- AM_AUTOMAKE_VERSION([1.11.6])
+ m4trace:configure.ac:6: -1- AC_REQUIRE_AUX_FILE([install-sh])
+@@ -180,6 +182,7 @@ m4trace:configure.ac:6: -1- AC_DEFINE_TRACE_LITERAL([VERSION])
+ m4trace:configure.ac:6: -1- m4_pattern_allow([^VERSION$])
+ m4trace:configure.ac:6: -1- AH_OUTPUT([VERSION], [/* Version number of package */
+ @%:@undef VERSION])
++m4trace:configure.ac:6: -1- AC_PREREQ([2.50])
+ m4trace:configure.ac:6: -1- AC_REQUIRE_AUX_FILE([missing])
+ m4trace:configure.ac:6: -1- AC_SUBST([ACLOCAL])
+ m4trace:configure.ac:6: -1- AC_SUBST_TRACE([ACLOCAL])
+@@ -205,6 +208,7 @@ m4trace:configure.ac:6: -1- m4_pattern_allow([^STRIP$])
+ m4trace:configure.ac:6: -1- AC_SUBST([INSTALL_STRIP_PROGRAM])
+ m4trace:configure.ac:6: -1- AC_SUBST_TRACE([INSTALL_STRIP_PROGRAM])
+ m4trace:configure.ac:6: -1- m4_pattern_allow([^INSTALL_STRIP_PROGRAM$])
++m4trace:configure.ac:6: -1- AC_PREREQ([2.60])
+ m4trace:configure.ac:6: -1- AC_REQUIRE_AUX_FILE([install-sh])
+ m4trace:configure.ac:6: -1- AC_SUBST([MKDIR_P])
+ m4trace:configure.ac:6: -1- AC_SUBST_TRACE([MKDIR_P])
+@@ -231,6 +235,7 @@ m4trace:configure.ac:6: -1- AC_SUBST([am__untar])
+ m4trace:configure.ac:6: -1- AC_SUBST_TRACE([am__untar])
+ m4trace:configure.ac:6: -1- m4_pattern_allow([^am__untar$])
+ m4trace:configure.ac:9: -1- AC_CONFIG_HEADERS([config.h])
++m4trace:configure.ac:12: -1- AC_PROG_CC
+ m4trace:configure.ac:12: -1- AC_SUBST([CC])
+ m4trace:configure.ac:12: -1- AC_SUBST_TRACE([CC])
+ m4trace:configure.ac:12: -1- m4_pattern_allow([^CC$])
+@@ -277,6 +282,7 @@ m4trace:configure.ac:12: -1- AC_SUBST([am__quote])
+ m4trace:configure.ac:12: -1- AC_SUBST_TRACE([am__quote])
+ m4trace:configure.ac:12: -1- m4_pattern_allow([^am__quote$])
+ m4trace:configure.ac:12: -1- AM_CONDITIONAL([AMDEP], [test "x$enable_dependency_tracking" != xno])
++m4trace:configure.ac:12: -1- AC_PREREQ([2.52])
+ m4trace:configure.ac:12: -1- AC_SUBST([AMDEP_TRUE])
+ m4trace:configure.ac:12: -1- AC_SUBST_TRACE([AMDEP_TRUE])
+ m4trace:configure.ac:12: -1- m4_pattern_allow([^AMDEP_TRUE$])
+@@ -299,6 +305,7 @@ m4trace:configure.ac:12: -1- m4_pattern_allow([^CCDEPMODE$])
+ m4trace:configure.ac:12: -1- AM_CONDITIONAL([am__fastdepCC], [
+   test "x$enable_dependency_tracking" != xno \
+   && test "$am_cv_CC_dependencies_compiler_type" = gcc3])
++m4trace:configure.ac:12: -1- AC_PREREQ([2.52])
+ m4trace:configure.ac:12: -1- AC_SUBST([am__fastdepCC_TRUE])
+ m4trace:configure.ac:12: -1- AC_SUBST_TRACE([am__fastdepCC_TRUE])
+ m4trace:configure.ac:12: -1- m4_pattern_allow([^am__fastdepCC_TRUE$])
+@@ -307,6 +314,7 @@ m4trace:configure.ac:12: -1- AC_SUBST_TRACE([am__fastdepCC_FALSE])
+ m4trace:configure.ac:12: -1- m4_pattern_allow([^am__fastdepCC_FALSE$])
+ m4trace:configure.ac:12: -1- _AM_SUBST_NOTMAKE([am__fastdepCC_TRUE])
+ m4trace:configure.ac:12: -1- _AM_SUBST_NOTMAKE([am__fastdepCC_FALSE])
++m4trace:configure.ac:24: -1- AC_CHECK_HEADERS([readline/readline.h readline/history.h], [], [have_readline=no])
+ m4trace:configure.ac:24: -1- AH_OUTPUT([HAVE_READLINE_READLINE_H], [/* Define to 1 if you have the <readline/readline.h> header file. */
+ @%:@undef HAVE_READLINE_READLINE_H])
+ m4trace:configure.ac:24: -1- AH_OUTPUT([HAVE_READLINE_HISTORY_H], [/* Define to 1 if you have the <readline/history.h> header file. */
+@@ -330,6 +338,8 @@ m4trace:configure.ac:24: -1- AC_DEFINE_TRACE_LITERAL([STDC_HEADERS])
+ m4trace:configure.ac:24: -1- m4_pattern_allow([^STDC_HEADERS$])
+ m4trace:configure.ac:24: -1- AH_OUTPUT([STDC_HEADERS], [/* Define to 1 if you have the ANSI C header files. */
+ @%:@undef STDC_HEADERS])
++m4trace:configure.ac:24: -1- AC_CHECK_HEADERS([sys/types.h sys/stat.h stdlib.h string.h memory.h strings.h \
++		  inttypes.h stdint.h unistd.h], [], [], [$ac_includes_default])
+ m4trace:configure.ac:24: -1- AH_OUTPUT([HAVE_SYS_TYPES_H], [/* Define to 1 if you have the <sys/types.h> header file. */
+ @%:@undef HAVE_SYS_TYPES_H])
+ m4trace:configure.ac:24: -1- AH_OUTPUT([HAVE_SYS_STAT_H], [/* Define to 1 if you have the <sys/stat.h> header file. */
+@@ -348,6 +358,10 @@ m4trace:configure.ac:24: -1- AH_OUTPUT([HAVE_STDINT_H], [/* Define to 1 if you h
+ @%:@undef HAVE_STDINT_H])
+ m4trace:configure.ac:24: -1- AH_OUTPUT([HAVE_UNISTD_H], [/* Define to 1 if you have the <unistd.h> header file. */
+ @%:@undef HAVE_UNISTD_H])
++m4trace:configure.ac:37: -1- AC_CHECK_HEADERS([stdio.h stdlib.h string.h \
++                  unistd.h getopt.h errno.h \
++                  sys/types.h sys/wait.h \
++				  pthread.h ])
+ m4trace:configure.ac:37: -1- AH_OUTPUT([HAVE_STDIO_H], [/* Define to 1 if you have the <stdio.h> header file. */
+ @%:@undef HAVE_STDIO_H])
+ m4trace:configure.ac:37: -1- AH_OUTPUT([HAVE_STDLIB_H], [/* Define to 1 if you have the <stdlib.h> header file. */
+@@ -366,14 +380,18 @@ m4trace:configure.ac:37: -1- AH_OUTPUT([HAVE_SYS_WAIT_H], [/* Define to 1 if you
+ @%:@undef HAVE_SYS_WAIT_H])
+ m4trace:configure.ac:37: -1- AH_OUTPUT([HAVE_PTHREAD_H], [/* Define to 1 if you have the <pthread.h> header file. */
+ @%:@undef HAVE_PTHREAD_H])
++m4trace:configure.ac:43: -1- AC_TYPE_PID_T
+ m4trace:configure.ac:43: -1- AC_DEFINE_TRACE_LITERAL([pid_t])
+ m4trace:configure.ac:43: -1- m4_pattern_allow([^pid_t$])
+ m4trace:configure.ac:43: -1- AH_OUTPUT([pid_t], [/* Define to `int\' if <sys/types.h> does not define. */
+ @%:@undef pid_t])
++m4trace:configure.ac:46: -1- AC_FUNC_FORK
++m4trace:configure.ac:46: -1- AC_CHECK_HEADERS([vfork.h])
+ m4trace:configure.ac:46: -1- AH_OUTPUT([HAVE_VFORK_H], [/* Define to 1 if you have the <vfork.h> header file. */
+ @%:@undef HAVE_VFORK_H])
+ m4trace:configure.ac:46: -1- AC_DEFINE_TRACE_LITERAL([HAVE_VFORK_H])
+ m4trace:configure.ac:46: -1- m4_pattern_allow([^HAVE_VFORK_H$])
++m4trace:configure.ac:46: -1- AC_CHECK_FUNCS([fork vfork])
+ m4trace:configure.ac:46: -1- AH_OUTPUT([HAVE_FORK], [/* Define to 1 if you have the `fork\' function. */
+ @%:@undef HAVE_FORK])
+ m4trace:configure.ac:46: -1- AH_OUTPUT([HAVE_VFORK], [/* Define to 1 if you have the `vfork\' function. */
+@@ -390,6 +408,8 @@ m4trace:configure.ac:46: -1- AC_DEFINE_TRACE_LITERAL([HAVE_WORKING_FORK])
+ m4trace:configure.ac:46: -1- m4_pattern_allow([^HAVE_WORKING_FORK$])
+ m4trace:configure.ac:46: -1- AH_OUTPUT([HAVE_WORKING_FORK], [/* Define to 1 if `fork\' works. */
+ @%:@undef HAVE_WORKING_FORK])
++m4trace:configure.ac:47: -1- AC_CHECK_FUNCS([getcwd getlogin_r fgets \
++                strtok execvp])
+ m4trace:configure.ac:47: -1- AH_OUTPUT([HAVE_GETCWD], [/* Define to 1 if you have the `getcwd\' function. */
+ @%:@undef HAVE_GETCWD])
+ m4trace:configure.ac:47: -1- AH_OUTPUT([HAVE_GETLOGIN_R], [/* Define to 1 if you have the `getlogin_r\' function. */
+@@ -408,6 +428,7 @@ m4trace:configure.ac:52: -1- AC_SUBST([LTLIBOBJS], [$ac_ltlibobjs])
+ m4trace:configure.ac:52: -1- AC_SUBST_TRACE([LTLIBOBJS])
+ m4trace:configure.ac:52: -1- m4_pattern_allow([^LTLIBOBJS$])
+ m4trace:configure.ac:52: -1- AM_CONDITIONAL([am__EXEEXT], [test -n "$EXEEXT"])
++m4trace:configure.ac:52: -1- AC_PREREQ([2.52])
+ m4trace:configure.ac:52: -1- AC_SUBST([am__EXEEXT_TRUE])
+ m4trace:configure.ac:52: -1- AC_SUBST_TRACE([am__EXEEXT_TRUE])
+ m4trace:configure.ac:52: -1- m4_pattern_allow([^am__EXEEXT_TRUE$])
+diff --git a/autoscan.log b/autoscan.log
+index e69de29..c546a3b 100644
+--- a/autoscan.log
++++ b/autoscan.log
+@@ -0,0 +1,10 @@
++autoscan: warning: missing AC_CHECK_FUNCS([dup2]) wanted by: 
++	main.c:81
++autoscan: warning: missing AC_CHECK_FUNCS([memset]) wanted by: 
++	main.c:157
++autoscan: warning: missing AC_CHECK_HEADERS([fcntl.h]) wanted by: 
++	main.c:11
++autoscan: warning: missing AC_CHECK_HEADERS([sys/socket.h]) wanted by: 
++	main.c:10
++autoscan: warning: missing AC_FUNC_MALLOC wanted by: 
++	main.c:156
+diff --git a/config.log b/config.log
+index f7ab457..2668c72 100644
+--- a/config.log
++++ b/config.log
+@@ -32,7 +32,6 @@ PATH: /usr/bin
+ PATH: /bin
+ PATH: /usr/local/games
+ PATH: /usr/games
+-PATH: /opt/Qt5.1.1/Tools/QtCreator/bin/
+ PATH: /opt/Qt5.1.1/5.1.1/gcc/bin/
+ 
+ 
+@@ -121,7 +120,7 @@ configure:3555: checking dependency style of gcc
+ configure:3666: result: gcc3
+ configure:3686: checking for library containing readline
+ configure:3717: gcc -o conftest -g -O2   conftest.c  >&5
+-/tmp/ccFJDpJO.o: In function `main':
++/tmp/ccQJ2Es4.o: In function `main':
+ /home/durd/Documents/tsh/conftest.c:22: undefined reference to `readline'
+ collect2: error: ld returned 1 exit status
+ configure:3717: $? = 1
+@@ -160,7 +159,7 @@ configure:3773: $? = 0
+ configure:3790: result: none required
+ configure:3798: checking for library containing pthread_create
+ configure:3829: gcc -o conftest -g -O2   conftest.c -lreadline  >&5
+-/tmp/ccFxyPJ4.o: In function `main':
++/tmp/ccly0ZNS.o: In function `main':
+ /home/durd/Documents/tsh/conftest.c:22: undefined reference to `pthread_create'
+ collect2: error: ld returned 1 exit status
+ configure:3829: $? = 1
+@@ -195,7 +194,7 @@ configure:3829: $? = 0
+ configure:3846: result: -lpthread
+ configure:3854: checking for library containing dlopen
+ configure:3885: gcc -o conftest -g -O2   conftest.c -lpthread -lreadline  >&5
+-/tmp/ccn7IuKe.o: In function `main':
++/tmp/ccB2CMtw.o: In function `main':
+ /home/durd/Documents/tsh/conftest.c:22: undefined reference to `dlopen'
+ collect2: error: ld returned 1 exit status
+ configure:3885: $? = 1
+@@ -854,3 +853,21 @@ target_alias=''
+ #define HAVE_EXECVP 1
+ 
+ configure: exit 0
++
++## ---------------------- ##
++## Running config.status. ##
++## ---------------------- ##
++
++This file was extended by tsh config.status 1.2, which was
++generated by GNU Autoconf 2.69.  Invocation command line was
++
++  CONFIG_FILES    = 
++  CONFIG_HEADERS  = 
++  CONFIG_LINKS    = 
++  CONFIG_COMMANDS = 
++  $ ./config.status config.h
++
++on bogon
++
++config.status:868: creating config.h
++config.status:1049: config.h is unchanged
+diff --git a/configure.scan b/configure.scan
+index 361241a..279f533 100644
+--- a/configure.scan
++++ b/configure.scan
+@@ -10,18 +10,23 @@ AC_CONFIG_HEADERS([config.h])
+ AC_PROG_CC
+ 
+ # Checks for libraries.
++# FIXME: Replace `main' with a function in `-lpthread':
++AC_CHECK_LIB([pthread], [main])
+ # FIXME: Replace `main' with a function in `-lreadline':
+ AC_CHECK_LIB([readline], [main])
++# FIXME: Replace `main' with a function in `-lrt':
++AC_CHECK_LIB([rt], [main])
+ 
+ # Checks for header files.
+-AC_CHECK_HEADERS([stdlib.h string.h unistd.h])
++AC_CHECK_HEADERS([fcntl.h stdlib.h string.h sys/socket.h unistd.h])
+ 
+ # Checks for typedefs, structures, and compiler characteristics.
+ AC_TYPE_PID_T
+ 
+ # Checks for library functions.
+ AC_FUNC_FORK
+-AC_CHECK_FUNCS([getcwd])
++AC_FUNC_MALLOC
++AC_CHECK_FUNCS([dup2 getcwd memset])
+ 
+ AC_CONFIG_FILES([Makefile])
+ AC_OUTPUT
+diff --git a/main.c b/main.c
+index ccee1a7..bbae90e 100644
+--- a/main.c
++++ b/main.c
+@@ -36,6 +36,8 @@ static struct option longoptions [] = {
+ 
+ int parent, child;
+ int exec_process_over = 0;
++int sub_process_id;
++int exec_pipe[2];
+ 
+ static char user[MAX_USER_LENGTH] = {0};
+ static char current_work_path[MAX_PATH_LENGTH] = {0};
+@@ -47,7 +49,9 @@ static void usage(void);
+ static void version(void);
+ static void readopt(int argc, char *argv[]);
+ static void execute(char *argv[]);
++static void* get_subpid(void* args);
+ static void cd(char *argv[]);
++void handle_signal(int sig) ;
+ 
+ int main(int argc, char *argv[]) {
+ 	setvbuf(stdout, 0, _IOLBF, 0);
+@@ -76,16 +80,34 @@ int main(int argc, char *argv[]) {
+ 			}
+ 		}
+ 		if(child != STDOUT_FILENO) {
+-			if(dup2(child, STDOUT_FILENO) < 0) {
+-				close(child);
++			if(dup2 (child, STDOUT_FILENO) < 0) {
++				close (child);
+ 				return -1;
+ 			}
+ 		}
++        if(child != STDERR_FILENO) {
++            if(dup2 (child, STDERR_FILENO) < 0) {
++                close (child);
++                return -1;
++            }
++        }
++
++        // create the pipe to get the subprocess id
++        // in order to kill it whenever it is necessary.
++        if(pipe(exec_pipe) < 0) {
++            perror("create exec_pipe");
++            return;
++        }
++
+ 		pthread_t pthread_id;
+ 		pthread_create(&pthread_id, NULL, start_qt_gui, NULL);
++		
++		pthread_t get_subpid_pthread_id;
++		pthread_create(&get_subpid_pthread_id, NULL, get_subpid, NULL);
++		
+ 		exec_shell(argc, argv);
+ 
+-		_exit(127);
++		//_exit(127);
+ //	} else {
+ //		close(child);
+ //		start_qt_gui(NULL);
+@@ -117,6 +139,7 @@ void* start_qt_gui(void* args)
+ 
+ 	func_core(argc,argv);
+ 	_exit(127);
++//	return 0;
+ }
+ 
+ int exec_shell(int argc, char* argv[])
+@@ -170,12 +193,14 @@ int exec_shell(int argc, char* argv[])
+ 
+ 			if (strcmp(argv[0], "cd") == 0) {
+ 				cd(argv);
+-				exec_process_over = 1;
++                exec_process_over = 1;
++				sub_process_id = 0;
+ 				continue;
+ 			}
+ 
+ 			execute(argv);
+ 			exec_process_over = 1;
++			sub_process_id = 0;
+ 		}
+ 	} else {
+ 		readopt(argc, argv);
+@@ -212,33 +237,57 @@ static void readopt(int argc, char *argv[]) {
+ 
+ static void execute(char *argv[]) {
+ 	pid_t pid;
+-
+ 	pid = fork();
+ 	if (pid < 0) {
+ 		fprintf(stdout, "SOME HAPPENED IN FORK!\n");
+-		exit(2);
++	 	exit(2);
+ 	} else if (pid == 0) {
++		pid_t sub_pid[1];
++		sub_pid[0] = getpid();
++
++		int write_count = 0;
++		if(write_count = write(exec_pipe[1], sub_pid, sizeof(pid_t)) < 0) {
++			perror("write to exec_pipe");
++		}
++		signal(SIGINT, handle_signal);
++
+ 		if (execvp(argv[0], argv) < 0) {
+-			switch (errno) {
+-				case ENOENT:
+-					fprintf(stdout, "COMMAND OR FILENAME NOT FOUND\n");
++	 		switch (errno) {
++	 			case ENOENT:
++	 				fprintf(stdout, "COMMAND OR FILENAME NOT FOUND\n");
+ 					break;
+ 				case EACCES:
+-					fprintf(stdout, "YOU DO NOT HAVE RIGHT TO ACCESS!\n");
++	 				fprintf(stdout, "YOU DO NOT HAVE RIGHT TO ACCESS!\n");
+ 					break;
+ 				default:
+ 					fprintf(stdout, "SOME ERROR HAPPENED IN EXEC\n");
+ 			}
+ 		}
+-		exit(3);
++	 	exit(3);
+ 	} else {
+ 		wait(NULL);
++	} 
++}
++
++void *get_subpid(void* args) {
++	
++	pid_t sub_id[1] = {0};
++
++	while(1) {
++		if(read(exec_pipe[0], sub_id, sizeof(pid_t) * 1) < 0) {
++			perror("read exec_pipe");
++			return;
++		}
++		sub_process_id = sub_id[0];
+ 	}
+ }
+ 
++void handle_signal(int sig) {
++	exit(0);
++}
+ static void cd(char *argv[]) {
+-	if (argv[1] != NULL) {
+-		if (chdir(argv[1]) < 0) {
++	if (argv[1] != NULL) { 
++		if (chdir(argv[1])  < 0) {
+ 			switch (errno) {
+ 				case ENOENT:
+ 					fprintf(stdout, "DIRECTORY NOT FOUND!\n");
+diff --git a/tsh b/tsh
+index 53e14ea..b4e7272 100755
+Binary files a/tsh and b/tsh differ
+=====================================================
+commit 461631335e3336bb482ca378bfc0528405169a5b
+Author: durd07 <durd07@gmial.com>
+Date:   Thu Nov 7 00:33:31 2013 +0800
+
+    modified configure.ac and add libraries.
+
 =====================================================
 commit f79ed9b3459c17f584b0e41bcf1c783f14be6bb9
 Author: durd <durd@bogon.localdomain>
