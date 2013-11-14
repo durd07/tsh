@@ -1,3 +1,13 @@
+=====================================================
+commit bce8286883c155c08810deefcb003c71276b9e70
+Author: durd <durd07@gmail.com>
+Date:   Fri Nov 8 15:49:30 2013 +0800
+
+    change tsh in order that it can kill the subprocee whenever possilbe
+    
+    1. add get subprocee id;
+    2. add signal to kill the subprocee
+
 diff --git a/autom4te.cache/requests b/autom4te.cache/requests
 index 5e02428..5560253 100644
 --- a/autom4te.cache/requests
