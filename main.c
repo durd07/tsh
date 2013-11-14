@@ -58,7 +58,8 @@ int main(int argc, char *argv[]) {
 	int fd[2]/*, child*/;
 	pid_t pid;
 
-	if(socketpair(AF_UNIX, SOCK_STREAM, 0, fd) < 0) {
+    if(socketpair(AF_UNIX, SOCK_STREAM, 0, fd) < 0) {
+//	if(pipe(fd) < 0) {
 		return -1;
 	}
 
@@ -78,20 +79,22 @@ int main(int argc, char *argv[]) {
 				close(child);
 				return -1;
 			}
-		}
+        }
+
 		if(child != STDOUT_FILENO) {
 			if(dup2 (child, STDOUT_FILENO) < 0) {
 				close (child);
 				return -1;
 			}
 		}
+/*
         if(child != STDERR_FILENO) {
             if(dup2 (child, STDERR_FILENO) < 0) {
                 close (child);
                 return -1;
             }
         }
-
+*/
         // create the pipe to get the subprocess id
         // in order to kill it whenever it is necessary.
         if(pipe(exec_pipe) < 0) {
@@ -103,7 +106,7 @@ int main(int argc, char *argv[]) {
 		pthread_create(&pthread_id, NULL, start_qt_gui, NULL);
 		
 		pthread_t get_subpid_pthread_id;
-		pthread_create(&get_subpid_pthread_id, NULL, get_subpid, NULL);
+//		pthread_create(&get_subpid_pthread_id, NULL, get_subpid, NULL);
 		
 		exec_shell(argc, argv);
 
@@ -117,7 +120,7 @@ int main(int argc, char *argv[]) {
 
 void* start_qt_gui(void* args)
 {
-	int argc;
+    int argc;
 	char* argv[2];
 	void *handle;
 	void *handle_core;	
@@ -139,7 +142,7 @@ void* start_qt_gui(void* args)
 
 	func_core(argc,argv);
 	_exit(127);
-//	return 0;
+	return NULL;
 }
 
 int exec_shell(int argc, char* argv[])
@@ -165,14 +168,16 @@ int exec_shell(int argc, char* argv[])
 				command = NULL;
 			}
 
-			//			if(read_from_stdin == 0) {
-			//		command = readline(PS1);
-
-			//			}else {
-			command = (char*)malloc(10000);
-			memset(command, 0, 10000);
-			read( child , command, 10000 );
-			//			}
+//			if(read_from_stdin == 0) {
+            //command = readline(PS1);
+//            command = readline(NULL);
+            command = readline("simics# ");
+            write(2, command, 7);
+//			}else {
+//			command = (char*)malloc(10000);
+//			memset(command, 0, 10000);
+//			read( child , command, 10000 );
+//			}
 
 			if ((command != NULL) && (*command != '\0')) {
 				add_history(command);
