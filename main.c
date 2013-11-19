@@ -29,6 +29,11 @@ long option:\n \
 #define MAX_COMMAND_LENGTH 1024
 #define MAX_USER_LENGTH    128
 
+typedef struct {
+	int argc;
+	char* argv[];
+}start_gui_para;
+
 static struct option longoptions [] = {
 	{"version", 0, NULL, 'v'},
 	{"help", 0, NULL, 'h'}
@@ -55,71 +60,65 @@ void handle_signal(int sig) ;
 
 int main(int argc, char *argv[]) {
 	setvbuf(stdout, 0, _IOLBF, 0);
-	int fd[2]/*, child*/;
+	int fd[2];
 	pid_t pid;
 
     if(socketpair(AF_UNIX, SOCK_STREAM, 0, fd) < 0) {
-//	if(pipe(fd) < 0) {
 		return -1;
 	}
 
 	parent = fd[0];
 	child = fd[1];
 
-//	if((pid = fork()) < 0) {
-//		close(parent);
-//		close(child);
-//	}
-//
-//	if(0 == pid) {
-//		close(parent);
-
-		if(child != STDIN_FILENO) {
-			if(dup2(child, STDIN_FILENO) < 0) {
-				close(child);
-				return -1;
-			}
-        }
-
-		if(child != STDOUT_FILENO) {
-			if(dup2 (child, STDOUT_FILENO) < 0) {
-				close (child);
-				return -1;
-			}
+	if(child != STDIN_FILENO) {
+		if(dup2(child, STDIN_FILENO) < 0) {
+			close(child);
+			return -1;
 		}
+    }
+
+	if(child != STDOUT_FILENO) {
+		if(dup2 (child, STDOUT_FILENO) < 0) {
+			close (child);
+			return -1;
+		}
+	}
 /*
-        if(child != STDERR_FILENO) {
-            if(dup2 (child, STDERR_FILENO) < 0) {
-                close (child);
-                return -1;
-            }
+    if(child != STDERR_FILENO) {
+        if(dup2 (child, STDERR_FILENO) < 0) {
+            close (child);
+            return -1;
         }
+    }
 */
-        // create the pipe to get the subprocess id
-        // in order to kill it whenever it is necessary.
-        if(pipe(exec_pipe) < 0) {
-            perror("create exec_pipe");
-            return;
-        }
+    // create the pipe to get the subprocess id
+    // in order to kill it whenever it is necessary.
+    if(pipe(exec_pipe) < 0) {
+        perror("create exec_pipe");
+        return;
+    }
 
-		pthread_t pthread_id;
-		pthread_create(&pthread_id, NULL, start_qt_gui, NULL);
-		
-		pthread_t get_subpid_pthread_id;
-//		pthread_create(&get_subpid_pthread_id, NULL, get_subpid, NULL);
-		
-		exec_shell(argc, argv);
+	pthread_t pthread_id;
+	pthread_create(&pthread_id, NULL, start_qt_gui, NULL);
+	
+	pthread_t get_subpid_pthread_id;
+	pthread_create(&get_subpid_pthread_id, NULL, get_subpid, NULL);
+	
+	exec_shell(argc, argv);
 
-		//_exit(127);
-//	} else {
-//		close(child);
-//		start_qt_gui(NULL);
-//		_exit(127);
-//	}
+	_exit(127);
 }
 
 void* start_qt_gui(void* args)
 {
+	start_gui_para para = {0};
+	if(NULL == args) {
+		para.argc = 1;
+		para.argv[0] = "sim-qt";
+	}
+	else {
+		para = *(start_gui_para*)args;
+	}
     int argc;
 	char* argv[2];
 	void *handle;
@@ -172,7 +171,6 @@ int exec_shell(int argc, char* argv[])
             //command = readline(PS1);
 //            command = readline(NULL);
             command = readline("simics# ");
-            write(2, command, 7);
 //			}else {
 //			command = (char*)malloc(10000);
 //			memset(command, 0, 10000);
@@ -182,6 +180,9 @@ int exec_shell(int argc, char* argv[])
 			if ((command != NULL) && (*command != '\0')) {
 				add_history(command);
 			}
+            else {
+                continue;
+            }
 
 			delimiter_position = strtok(command, " ");
 			while (delimiter_position != NULL) {
